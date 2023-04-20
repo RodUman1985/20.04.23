@@ -1,0 +1,27 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:c="">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+        </head>
+         <body>
+            <h1>Dear ,  <%=((User) request.getSession().getAttribute("user")).getName()%> your order:</h1>
+
+            <ol>
+                <c:forEach var="item" items="${ResultList}">
+                        <li>
+                            <c:out value="${item.getTitle()}"/>
+                            <c:out value="${item.getPrice()}"/>$
+                        </li>
+                    </c:forEach>
+            </ol>
+
+
+     <p align="center"><a href="/ShopFirstPage.jsp">Return to start page</a></p>
+     <p align="center"><a href="/Shop.jsp">go back to the product selection page</a></p>
+
+
+         </body>
+         </html>
